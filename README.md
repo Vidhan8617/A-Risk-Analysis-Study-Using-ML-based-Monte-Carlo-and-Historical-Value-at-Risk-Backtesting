@@ -125,5 +125,5 @@ The objective of this project is to evaluate and compare traditional and machine
 ## 📈 Conclusion
 
 This study demonstrates that **machine-learning-enhanced Monte Carlo VaR** provides a more adaptive and responsive framework for market risk estimation compared to traditional Historical VaR, particularly under changing market volatility conditions.
-<img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/c7bb4147-82cc-4a71-9435-1c2d8c53f79d" />
+
 
