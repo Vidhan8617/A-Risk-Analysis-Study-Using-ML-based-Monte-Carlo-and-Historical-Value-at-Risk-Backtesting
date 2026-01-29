@@ -1,83 +1,129 @@
-# A-Risk-Analysis-Study-Using-ML-based-Monte-Carlo-and-Historical-Value-at-Risk-Backtesting
-This project compares Historical VaR and ML-based Monte Carlo VaR for market risk analysis on Indian stock data. Volatility is predicted using a Random Forest model and used in Monte Carlo simulations. Both models are backtested using violation rates and binomial tests.
+# 📉 A Risk Analysis Study Using ML-Based Monte Carlo and Historical Value at Risk (VaR)
 
-🧑‍💻 Tools & Libraries
+This project presents a comparative market risk analysis using **Historical Value at Risk (VaR)** and an **ML-based Monte Carlo VaR** framework applied to **Indian stock market data**.  
+Volatility is predicted using a **Random Forest regression model** and incorporated into Monte Carlo simulations.  
+Both approaches are evaluated using **out-of-sample backtesting** and **statistical validation**.
 
-Python, Pandas, NumPy
+---
 
-Scikit-learn
+## 🚀 Project Highlights
 
-SciPy
+- Comparison of static and adaptive VaR models  
+- Machine Learning–based volatility forecasting  
+- Monte Carlo simulations with fat-tailed distributions  
+- Robust statistical backtesting using binomial tests  
+- Application on real Indian equity market data  
 
-Matplotlib
+---
 
-🔧 Techniques Used
+## 🧑‍💻 Tools & Libraries
 
-Historical Value at Risk (99%)
+- Python  
+- Pandas, NumPy  
+- Scikit-learn  
+- SciPy  
+- Matplotlib  
 
-Random Forest regression for volatility prediction
+---
 
-Monte Carlo simulation for loss distribution modeling
+## 🔧 Techniques Used
 
-Student-t distribution for fat-tailed returns
+- Historical Value at Risk (99% confidence level)  
+- Random Forest regression for volatility prediction  
+- Monte Carlo simulation for loss distribution modeling  
+- Student-t distribution for fat-tailed returns  
+- Time-series aware train–test split  
+- Out-of-sample backtesting  
+- Exact binomial test for VaR validation  
 
-Out-of-sample backtesting
+---
 
-Exact binomial test for VaR validation
+## 📌 Methodology
 
-Methodology
+The objective of this project is to evaluate and compare traditional and machine-learning-enhanced Value at Risk (VaR) models using Indian stock market data. The methodology follows a structured and bias-free pipeline.
 
-The objective of this project is to evaluate and compare traditional and machine-learning-enhanced Value at Risk (VaR) models using Indian stock market data. The methodology follows a structured pipeline consisting of data preprocessing, risk modeling, simulation, and statistical backtesting.
+---
 
-Data Preparation
+### 1. Data Preparation
 
-Daily price data from the Indian equity market was collected and preprocessed by parsing dates, sorting observations chronologically, and converting price values into numerical format. Daily log returns were computed from adjusted closing prices and used as the basis for all risk calculations.
+- Collected daily price data from the Indian equity market  
+- Parsed dates and sorted observations chronologically  
+- Converted price values into numerical format  
+- Computed daily log returns from adjusted closing prices  
 
-Train–Test Split
+---
 
-To avoid look-ahead bias, the dataset was split chronologically into training and testing sets. All model estimation was performed using the training data, while risk forecasts were evaluated exclusively on out-of-sample test data.
+### 2. Train–Test Split
 
-Historical VaR
+- Dataset split chronologically to avoid look-ahead bias  
+- Model estimation performed only on training data  
+- Risk forecasts evaluated exclusively on out-of-sample test data  
 
-As a traditional baseline, 99% Historical VaR was estimated by computing the 1st percentile of the training-period return distribution. This resulted in a fixed risk threshold, which was subsequently backtested against test-period losses.
+---
 
-ML-Based Volatility Modeling
+### 3. Historical VaR
 
-For the Monte Carlo VaR framework, rolling volatility was modeled using a Random Forest regression algorithm. Input features included lagged returns, rolling averages, and volatility persistence terms. The trained model generated daily volatility forecasts for the test period.
+- Estimated 99% Historical VaR as a baseline model  
+- Computed the 1st percentile of training-period returns  
+- Generated a fixed risk threshold  
+- Backtested against test-period losses  
 
-Monte Carlo Simulation
+---
 
-Using the predicted volatility estimates, Monte Carlo simulations were performed to generate thousands of potential future returns for each day. To better capture fat-tailed behavior in financial returns, a Student-t distribution was employed. The 99% VaR was obtained as the lower-tail quantile of the simulated loss distribution.
+### 4. ML-Based Volatility Modeling
 
-Backtesting and Validation
+- Modeled rolling volatility using Random Forest regression  
+- Input features included:
+  - Lagged returns  
+  - Rolling averages  
+  - Volatility persistence terms  
+- Generated daily volatility forecasts for the test period  
 
-Both Historical VaR and ML-based Monte Carlo VaR were backtested by comparing predicted VaR thresholds against realized out-of-sample losses. Violation rates were computed and evaluated using the exact binomial test to assess statistical consistency with the assumed confidence level.
+---
 
-Model Comparison
+### 5. Monte Carlo Simulation
 
-The two approaches were compared based on violation frequency, statistical validation results, and visual inspection. This enabled an assessment of static versus adaptive risk modeling and highlighted the benefits of machine-learning-enhanced Monte Carlo VaR.
+- Used predicted volatility estimates to simulate thousands of future returns per day  
+- Applied a Student-t distribution to capture fat-tailed behavior  
+- Estimated 99% Monte Carlo VaR from the lower-tail quantile of simulated losses  
 
+---
 
+### 6. Backtesting and Validation
 
-🧠 Methodology Summary
+- Compared predicted VaR thresholds against realized losses  
+- Computed violation rates for both models  
+- Applied the exact binomial test to assess statistical consistency  
 
-Preprocess Indian stock market price data
+---
 
-Compute daily returns and rolling volatility
+### 7. Model Comparison
 
-Split data into training and testing sets (time-series aware)
+- Compared Historical VaR and ML-based Monte Carlo VaR using:
+  - Violation frequency  
+  - Statistical test results  
+  - Visual performance analysis  
+- Highlighted the advantages of adaptive ML-based risk modeling over static approaches  
 
-Estimate Historical VaR from training data
+---
 
-Train an ML model to predict volatility
+## 🧠 Methodology Summary
 
-Generate Monte Carlo simulations using predicted volatility
+- Preprocess Indian stock market price data  
+- Compute daily returns and rolling volatility  
+- Perform time-series aware train–test split  
+- Estimate 99% Historical VaR  
+- Train an ML model to predict volatility  
+- Generate Monte Carlo simulations using predicted volatility  
+- Estimate 99% Monte Carlo VaR  
+- Backtest both models on test data  
+- Validate results using violation rates and binomial tests  
+- Compare static and adaptive risk models  
 
-Estimate 99% Monte Carlo VaR
+---
 
-Backtest both models on test data
+## 📈 Conclusion
 
-Validate results using violation rates and binomial tests
+This study demonstrates that **machine-learning-enhanced Monte Carlo VaR** provides a more adaptive and responsive framework for market risk estimation compared to traditional Historical VaR, particularly under changing market volatility conditions.
+<img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/c7bb4147-82cc-4a71-9435-1c2d8c53f79d" />
 
-Compare static and adaptive risk models
-<img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/b9f37f61-fb25-46fa-bd47-ba72967d01c6" />
